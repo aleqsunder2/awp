@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Car Wash Panel</title>
+		<link rel="stylesheet" type="text/css" href="styles/fa.css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<link rel="stylesheet/less" type="text/css" href="styles/main.less">
+		<script src="js/less.min.js"></script>
+		<script src="js/aleqsunder-fort.js"></script>
+		<script src="js/modal-popup.js"></script>
+    </head>
+    <body>
+		<div id="main-app">
+			<div id="login" class="active" active>
+				<div class="form">
+					<div class="logotype">Логотип</div>
+					
+					<div class="column">
+						<input name="login" value="" onkeyup="this.setAttribute('value', this.value)" type="text">
+						<label>Логин</label>
+					</div>
+					 
+					<div class="column"> 
+						<input name="password" value="" onkeyup="this.setAttribute('value', this.value)" type="password">
+						<label>Пароль</label>
+					</div>
+					
+					<confirm type="auth::login" onclick="sendHistory('first-page')">Авторизация</confirm>
+				</div>
+			</div>
+			
+			<div id="greeting">
+				<div class="middle-text">
+					Привет, <span class="username">USERNAME</span>!
+				</div>
+			</div>
+			
+			<div id="main">
+				<div class="top-container">
+					<div class="top-menu far fa-bars" onclick="openMenu();"></div>
+					<div class="top-name">
+						<span class="name">Зиновий</span>
+						<span class="rank">(владелец)</span>
+					</div>
+					<div class="top-setting far fa-cog"></div>
+				</div>
+				
+				<div class="middle-container">
+					<div id="first-page" active>
+						<div class="box row">
+							<div class="info-block history"><i class="far fa-history"></i> История</div>
+							<div onclick="sendHistory('create-task')" class="info-block create"><i class="far fa-plus-circle"></i> Создать</div>
+						</div>
+						<div class="box">
+							<div class="title">В процессе выполнения</div>
+							<div class="items progress">
+								<div class="item">
+									<div class="left">
+										<div class="preview"><i class="fas fa-car"></i></div>
+									</div>
+									<div class="right">
+										<div class="type">
+											<span class="bold">Тип:</span>
+											<span class="text">легковая</span>
+										</div>
+										<div class="target">
+											<span class="bold">Цель:</span>
+											<span class="text">колёса, капот</span>
+										</div>
+										<div class="total">
+											<span class="bold">Сумма:</span>
+											<span class="text">$80</span>
+										</div>
+										
+										<div class="top-right">
+											<div class="spend-time">+ 12:33</div>
+										</div>
+										
+										<div class="bottom-right">
+											<div class="create-time">
+												<span class="bold">Создано</span>
+												<span class="text">15:22:30</span>
+											</div>
+											<div class="create-user">
+												<span class="bold">Администратор</span>
+												<span class="text">Вадим</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="left">
+										<div class="preview"><i class="fas fa-bus-alt"></i></div>
+									</div>
+									<div class="right">
+										<div class="type">
+											<span class="bold">Тип:</span>
+											<span class="text">грузовая</span>
+										</div>
+										<div class="target">
+											<span class="bold">Цель:</span>
+											<span class="text">все</span>
+										</div>
+										<div class="total">
+											<span class="bold">Сумма:</span>
+											<span class="text">$105</span>
+										</div>
+										
+										<div class="top-right">
+											<div class="spend-time">+ 05:04</div>
+										</div>
+										
+										<div class="bottom-right">
+											<div class="create-time">
+												<span class="bold">Создано</span>
+												<span class="text">15:29:50</span>
+											</div>
+											<div class="create-user">
+												<span class="bold">Администратор</span>
+												<span class="text">Григорий</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box">
+							<div class="title">Выполненные задачи</div>
+							<div class="items ended">
+								<div class="item">
+									<div class="left">
+										<div class="preview"><i class="fas fa-car"></i></div>
+									</div>
+									<div class="right">
+										<div class="type">
+											<span class="bold">Тип:</span>
+											<span class="text">легковая</span>
+										</div>
+										<div class="target">
+											<span class="bold">Цель:</span>
+											<span class="text">колёса, капот</span>
+										</div>
+										<div class="total">
+											<span class="bold">Сумма:</span>
+											<span class="text">$80</span>
+										</div>
+										
+										<div class="bottom-right">
+											<div class="create-time">
+												<span class="bold">Создано</span>
+												<span class="text">15:11:17</span>
+											</div>
+											<div class="create-user">
+												<span class="bold">Администратор</span>
+												<span class="text">Вадим</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="left">
+										<div class="preview"><i class="fas fa-bus-alt"></i></div>
+									</div>
+									<div class="right">
+										<div class="type">
+											<span class="bold">Тип:</span>
+											<span class="text">легковая</span>
+										</div>
+										<div class="target">
+											<span class="bold">Цель:</span>
+											<span class="text">колёса, капот</span>
+										</div>
+										<div class="total">
+											<span class="bold">Сумма:</span>
+											<span class="text">$80</span>
+										</div>
+										
+										<div class="bottom-right">
+											<div class="create-time">
+												<span class="bold">Создано</span>
+												<span class="text">14:58:10</span>
+											</div>
+											<div class="create-user">
+												<span class="bold">Администратор</span>
+												<span class="text">Вадим</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="create-task">
+						<div class="box row">
+							<div onclick="backHistory();" class="info-block history"><i class="far fa-arrow-circle-left"></i> Назад</div>
+						</div>
+						<div class="box">
+							<div class="items">
+								<div class="title">Создание нового задания</div>
+								<div class="item">
+									<div class="manager" popup-type="Тип">
+										<div class="label">Тип</div>
+										<div class="choise" pe><i class="fas fa-caret-down"></i> выбрать</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="manager" popup-type="Цель">
+										<div class="label">Цель</div>
+										<div class="choise" pe><i class="fas fa-caret-down"></i> выбрать</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="manager" popup-type="Комментарий">
+										<div class="label">Комментарий</div>
+										<div class="choise"><textarea class="invisibility" onkeypress="change_height(event);"></textarea></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lc right">* - обязательный параметр</div>
+						<div class="box row">
+							<div class="info-block history"><i class="far fa-ban"></i> Отмена</div>
+							<div class="info-block history"><i class="far fa-share"></i> Отправить</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/run.js"></script>
+    </body>
+</html>
